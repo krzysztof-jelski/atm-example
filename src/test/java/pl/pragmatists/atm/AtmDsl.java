@@ -1,8 +1,14 @@
 package pl.pragmatists.atm;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+
+@Component
+@Scope("cucumber-glue")
 public class AtmDsl {
 
     private Account account;

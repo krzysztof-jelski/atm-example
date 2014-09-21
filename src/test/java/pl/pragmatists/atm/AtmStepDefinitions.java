@@ -1,13 +1,17 @@
 package pl.pragmatists.atm;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import pl.pragmatists.support.CukesSpringConfiguration;
 
+@ContextConfiguration(classes = CukesSpringConfiguration.class)
 public class AtmStepDefinitions {
 
-    private AtmDsl atmDsl = new AtmDsl();
+    @Autowired
+    private AtmDsl atmDsl;
 
     @Given("^my account has been credited with \\$(\\d+)$")
     public void my_account_has_been_credited_with_$(int amount) {
@@ -39,9 +43,4 @@ public class AtmStepDefinitions {
         atmDsl.assertMessageShown("Insufficient funds");
     }
 
-    @Given("^a card with pin '(\\d+)'$")
-    public void a_card_with_pin_(int arg1) throws Throwable {
-        // Express the Regexp above with the code you wish you had
-        throw new PendingException();
-    }
 }
