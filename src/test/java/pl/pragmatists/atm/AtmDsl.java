@@ -1,6 +1,6 @@
 package pl.pragmatists.atm;
 
-import static org.fest.assertions.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 public class AtmDsl {
