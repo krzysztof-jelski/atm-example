@@ -2,6 +2,7 @@ package pl.pragmatists.atm;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import pl.pragmatists.atm.support.FakeCashDispenser;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
