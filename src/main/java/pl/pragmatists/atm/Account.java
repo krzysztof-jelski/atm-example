@@ -3,9 +3,11 @@ package pl.pragmatists.atm;
 public class Account {
 
     private int balance;
+    @SuppressWarnings("unused")
+    private Long number;
 
-    public Account(int amount) {
-        this.balance = amount;
+    public Account(Long number) {
+        this.number = number;
     }
 
     public int getBalance() {
@@ -16,4 +18,7 @@ public class Account {
         balance -= toWithdraw;
     }
 
+    public void credit(int amount) {
+        this.balance += amount;
+    }
 }

@@ -1,27 +1,35 @@
-package pl.pragmatists.atm;
+package pl.pragmatists.atm.support;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import pl.pragmatists.atm.support.FakeCashDispenser;
+import pl.pragmatists.atm.Account;
+import pl.pragmatists.atm.CashDispenser;
+import pl.pragmatists.atm.Display;
+import pl.pragmatists.atm.Teller;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 @Component
 @Scope("cucumber-glue")
 public class AtmDsl {
 
+    @Autowired
     private Account account;
-    private FakeCashDispenser cashDispenser = new FakeCashDispenser();
-    private Display display = mock(Display.class);
+    @Autowired
+    private CashDispenser cashDispenser;
+    @Autowired
+    private Display display;
+    @Autowired
+    private Teller teller;
 
     public void accountHasBeenCreditedWith(int amount) {
-        account = new Account(amount);
+        account.credit(amount);
+        assertAccountBalance(amount);
     }
 
     public void withdraw(int amount) {
-        Teller teller = new Teller(cashDispenser, display);
         teller.authenticateAs(account);
         teller.withdraw(amount);
     }

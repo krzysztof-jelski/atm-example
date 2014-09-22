@@ -4,8 +4,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import pl.pragmatists.atm.AtmDsl;
-import pl.pragmatists.support.CukesSpringConfiguration;
+import pl.pragmatists.atm.support.AtmDsl;
+import pl.pragmatists.atm.support.CukesSpringConfiguration;
 
 @ContextConfiguration(classes = CukesSpringConfiguration.class)
 public class AccountStepDefinitions {
