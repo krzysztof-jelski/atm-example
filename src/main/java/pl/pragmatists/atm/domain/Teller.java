@@ -1,4 +1,4 @@
-package pl.pragmatists.atm;
+package pl.pragmatists.atm.domain;
 
 public interface Teller {
     void authenticateAs(Account account);

@@ -3,7 +3,7 @@ package pl.pragmatists.atm.support;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
-import pl.pragmatists.atm.Account;
+import pl.pragmatists.atm.domain.Account;
 
 @Configuration
 public class AccountFactory {

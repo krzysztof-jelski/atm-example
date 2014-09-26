@@ -4,10 +4,10 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
-import pl.pragmatists.atm.AutomatedTeller;
-import pl.pragmatists.atm.CashDispenser;
-import pl.pragmatists.atm.Display;
-import pl.pragmatists.atm.Teller;
+import pl.pragmatists.atm.domain.AutomatedTeller;
+import pl.pragmatists.atm.domain.CashDispenser;
+import pl.pragmatists.atm.domain.Display;
+import pl.pragmatists.atm.domain.Teller;
 
 @Configuration
 @ComponentScan(basePackages = {"pl.pragmatists.atm"})
@@ -26,7 +26,7 @@ public class CukesSpringConfiguration {
 
     @Bean
     @Scope("cucumber-glue")
-    public Teller getTeller() {
+    public Teller createTeller() {
         return new AutomatedTeller(context.getBean(CashDispenser.class), context.getBean(Display.class));
     }
 }

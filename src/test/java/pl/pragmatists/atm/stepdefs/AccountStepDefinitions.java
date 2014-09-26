@@ -3,11 +3,12 @@ package pl.pragmatists.atm.stepdefs;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.SpringApplicationContextLoader;
 import org.springframework.test.context.ContextConfiguration;
 import pl.pragmatists.atm.support.AtmDsl;
 import pl.pragmatists.atm.support.CukesSpringConfiguration;
 
-@ContextConfiguration(classes = CukesSpringConfiguration.class)
+@ContextConfiguration(classes = CukesSpringConfiguration.class, loader = SpringApplicationContextLoader.class)
 public class AccountStepDefinitions {
 
     @Autowired

@@ -3,10 +3,10 @@ package pl.pragmatists.atm.support;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import pl.pragmatists.atm.Account;
-import pl.pragmatists.atm.CashDispenser;
-import pl.pragmatists.atm.Display;
-import pl.pragmatists.atm.Teller;
+import pl.pragmatists.atm.domain.Account;
+import pl.pragmatists.atm.domain.CashDispenser;
+import pl.pragmatists.atm.domain.Display;
+import pl.pragmatists.atm.domain.Teller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
