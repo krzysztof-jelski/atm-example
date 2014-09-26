@@ -1,6 +1,6 @@
-package pl.pragmatists.atm.stepdefs;
+package pl.pragmatists.atm.hooks;
 
-import cucumber.api.java.en.When;
+import cucumber.api.java.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationContextLoader;
 import org.springframework.test.context.ContextConfiguration;
@@ -10,14 +10,14 @@ import pl.pragmatists.atm.support.atmdsl.AtmInterfaceFactory;
 
 @ContextConfiguration(classes = CukesSpringConfiguration.class, loader = SpringApplicationContextLoader.class)
 @WebAppConfiguration
-public class TellerStepDefinitions {
+public class EnableWebHook {
 
     @Autowired
-    private AtmInterfaceFactory atmInterfaceFactory;
+    public AtmInterfaceFactory atmInterfaceFactory;
 
-    @When("^I withdraw \\$(\\d+)$")
-    public void I_withdraw_$(int amount) throws Throwable {
-        atmInterfaceFactory.getTellerInterface().withdraw(amount);
+    @Before("@web")
+    public void enableWeb() {
+        atmInterfaceFactory.webEnabled = true;
     }
-
 }
+

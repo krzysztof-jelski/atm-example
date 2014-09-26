@@ -10,7 +10,7 @@ public class WithdrawController {
 
     @RequestMapping(value = "/withdraw", method = POST)
     public String withdraw() {
-        return "atm";
+        return "redirect:/";
     }
 
 }

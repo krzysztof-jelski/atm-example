@@ -2,8 +2,11 @@ package pl.pragmatists.atm.support;
 
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.htmlunit.webdriver.MockMvcHtmlUnitDriver;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 import pl.pragmatists.atm.domain.AutomatedTeller;
 import pl.pragmatists.atm.domain.CashDispenser;
 import pl.pragmatists.atm.domain.Display;
@@ -16,7 +19,7 @@ import pl.pragmatists.atm.domain.Teller;
 public class CukesSpringConfiguration {
 
     @Autowired
-    private ApplicationContext context;
+    private WebApplicationContext context;
 
     @Bean
     @Scope("cucumber-glue")
@@ -28,5 +31,11 @@ public class CukesSpringConfiguration {
     @Scope("cucumber-glue")
     public Teller createTeller() {
         return new AutomatedTeller(context.getBean(CashDispenser.class), context.getBean(Display.class));
+    }
+
+    @Bean
+    public MockMvcHtmlUnitDriver createDriver() {
+        MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
+        return new MockMvcHtmlUnitDriver(mockMvc, true);
     }
 }
