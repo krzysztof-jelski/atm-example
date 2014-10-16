@@ -1,13 +1,13 @@
-package pl.pragmatists.atm.stepdefs;
+package pl.pragmatists.atm.cukes.stepdefs;
 
 import cucumber.api.Transform;
 import cucumber.api.java.en.Given;
 import org.springframework.boot.test.SpringApplicationContextLoader;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
-import pl.pragmatists.atm.support.Banknote;
-import pl.pragmatists.atm.support.CukesSpringConfiguration;
-import pl.pragmatists.atm.transforms.MoneyConverter;
+import pl.pragmatists.atm.cukes.support.Banknote;
+import pl.pragmatists.atm.cukes.support.CukesSpringConfiguration;
+import pl.pragmatists.atm.cukes.transforms.MoneyConverter;
 
 import java.util.List;
 

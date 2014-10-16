@@ -1,4 +1,4 @@
-package pl.pragmatists.atm.transforms;
+package pl.pragmatists.atm.cukes.transforms;
 
 import cucumber.api.Transformer;
 import pl.pragmatists.atm.domain.Money;

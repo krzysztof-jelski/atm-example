@@ -1,12 +1,12 @@
-package pl.pragmatists.atm.stepdefs;
+package pl.pragmatists.atm.cukes.stepdefs;
 
 import cucumber.api.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationContextLoader;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
-import pl.pragmatists.atm.support.CukesSpringConfiguration;
-import pl.pragmatists.atm.support.atmdsl.AtmDsl;
+import pl.pragmatists.atm.cukes.support.CukesSpringConfiguration;
+import pl.pragmatists.atm.cukes.support.atmdsl.AtmDsl;
 
 @ContextConfiguration(classes = CukesSpringConfiguration.class, loader = SpringApplicationContextLoader.class)
 @WebAppConfiguration

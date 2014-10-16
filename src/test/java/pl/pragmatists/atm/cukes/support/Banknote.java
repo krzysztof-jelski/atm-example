@@ -1,4 +1,4 @@
-package pl.pragmatists.atm.support;
+package pl.pragmatists.atm.cukes.support;
 
 import pl.pragmatists.atm.domain.Money;
 

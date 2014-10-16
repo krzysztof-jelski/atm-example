@@ -1,4 +1,4 @@
-package pl.pragmatists.atm.support;
+package pl.pragmatists.atm.cukes.support;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

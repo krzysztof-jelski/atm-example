@@ -1,4 +1,4 @@
-package pl.pragmatists.atm.support.atmdsl;
+package pl.pragmatists.atm.cukes.support.atmdsl;
 
 public interface TellerInterface {
     void withdraw(int amount);

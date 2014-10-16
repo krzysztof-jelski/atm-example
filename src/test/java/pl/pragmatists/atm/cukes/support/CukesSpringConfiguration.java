@@ -1,4 +1,4 @@
-package pl.pragmatists.atm.support;
+package pl.pragmatists.atm.cukes.support;
 
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,7 @@ import pl.pragmatists.atm.domain.Display;
 import pl.pragmatists.atm.domain.Teller;
 
 @Configuration
+@ComponentScan(basePackages = {"pl.pragmatists.atm.cukes"})
 @ImportResource("classpath:cucumber/runtime/java/spring/cucumber-glue.xml") // defines 'cucumber-glue' (scenario) scope
 @Import({AccountFactory.class, Application.class})
 public class CukesSpringConfiguration {

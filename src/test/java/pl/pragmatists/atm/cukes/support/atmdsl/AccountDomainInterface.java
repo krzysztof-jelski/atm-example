@@ -1,4 +1,4 @@
-package pl.pragmatists.atm.support.atmdsl;
+package pl.pragmatists.atm.cukes.support.atmdsl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
