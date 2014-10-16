@@ -1,6 +1,5 @@
 Feature: Banknotes are dispensed in a smart way
 
-  @wip
   Scenario: Single banknote matches amount
     Given Atm has banknotes:
       | value   | count |

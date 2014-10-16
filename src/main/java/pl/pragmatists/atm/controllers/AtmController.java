@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AtmController {
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/main")
     public String atm() {
         return "atm";
     }

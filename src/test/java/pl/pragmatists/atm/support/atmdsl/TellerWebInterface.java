@@ -14,7 +14,7 @@ public class TellerWebInterface implements TellerInterface {
 
     @Override
     public void withdraw(int amount) {
-        driver.get("http://localhost/");
+        driver.get("http://localhost/atm/main");
         driver.findElementById("amount").sendKeys(String.valueOf(amount));
         driver.findElementById("withdraw").click();
     }

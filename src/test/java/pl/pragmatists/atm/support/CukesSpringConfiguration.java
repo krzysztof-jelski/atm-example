@@ -7,15 +7,15 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.htmlunit.webdriver.MockMvcHtmlUnitDriver;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import pl.pragmatists.atm.app.Application;
 import pl.pragmatists.atm.domain.AutomatedTeller;
 import pl.pragmatists.atm.domain.CashDispenser;
 import pl.pragmatists.atm.domain.Display;
 import pl.pragmatists.atm.domain.Teller;
 
 @Configuration
-@ComponentScan(basePackages = {"pl.pragmatists.atm"})
 @ImportResource("classpath:cucumber/runtime/java/spring/cucumber-glue.xml") // defines 'cucumber-glue' (scenario) scope
-@Import(AccountFactory.class)
+@Import({AccountFactory.class, Application.class})
 public class CukesSpringConfiguration {
 
     @Autowired
