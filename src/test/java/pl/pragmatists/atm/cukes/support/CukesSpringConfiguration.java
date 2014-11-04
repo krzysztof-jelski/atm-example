@@ -15,7 +15,6 @@ import pl.pragmatists.atm.domain.Teller;
 
 @Configuration
 @ComponentScan(basePackages = {"pl.pragmatists.atm.cukes"})
-@ImportResource("classpath:cucumber/runtime/java/spring/cucumber-glue.xml") // defines 'cucumber-glue' (scenario) scope
 @Import({AccountFactory.class, Application.class})
 public class CukesSpringConfiguration {
 
