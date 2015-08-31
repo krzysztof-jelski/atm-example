@@ -1,7 +1,7 @@
 @wip
 Feature: Cash Withdrawal
 
-  @web
+#  @web
   Scenario: Successful withdrawal from an account
     Given my account has been credited with $100.00
     When I withdraw $20
